@@ -113,10 +113,11 @@ def my_rician_channel(K,L,N_t,N_r,N_U,N_D,M_fai,position_AP,position_IRS,positio
     Phi_ND = correlation_matrix(N_D,r_user)      
     
     """rician factor"""
-    beta_AP_user = 10**(-3/10)
-    beta_IRS_user = 10**(3/10)
-    beta_user = 10**(0/10)
-    beta_AP_IRS = 10**(3/10)
+    base_factor = 5
+    beta_AP_user = 10**((-3+base_factor)/10)
+    beta_IRS_user = 10**((3+base_factor)/10)
+    beta_user = 10**((0+base_factor)/10)
+    beta_AP_IRS = 10**((3+base_factor)/10)
     
     """pathloss"""
     alpha_AP_user = 3.8
